@@ -1,0 +1,250 @@
+#include <stdio.h>
+
+int main(){
+
+    printf("Hellow world\n");
+
+    FILE *fp, *ifp;
+    int size = 0;
+    fp = fopen("Data4.txt","r");
+    ifp = fopen("matrix.out","w");
+
+    fscanf(fp,"%d",&size);
+    printf("%d", size);
+
+    int m1[size][size];
+    int m2[size][size];
+    int final[size][size];
+    int tempMulti[size];
+    int temp1 = 0;
+    int temp2 = 0;
+    int multiTemp = 0;
+    int total = 0;
+
+    //first array
+    for(int i = 0; i < size; ++i){
+        for(int j = 0; j < size; ++j){
+            fscanf(fp,"%d",&m1[i][j]);
+            //printf("m1[%d][%d] = %d ",i,j,m1[i][j]);
+        }
+    }
+
+    //second array
+    for(int i = 0; i < size; ++i){
+        for(int j = 0; j < size; ++j){
+            fscanf(fp,"%d",&m2[i][j]);
+            //printf("m2[%d][%d] = %d ",i,j,m2[i][j]);
+        }
+    }
+    //int g = 0;
+    //m1 row m2 column 
+    for(int i = 0; i < size; ++i){
+        //m1 column m2 row
+        for(int j = 0; j < size; ++j){
+          //
+          temp1 = m1[i][j];
+          for(int m = 0; m < size; ++m){
+            temp2 = m2[j][m];
+            total += temp1 * temp2;
+          }
+          //temp1 = &m1[i][j];
+          //temp2 = &m2[j][i];
+          //total += temp1 * temp2;
+            final[i][j] = total;
+            temp1 = 0;
+            temp2 = 0;
+            total = 0;
+        }
+        //for(int k = 0; k < size; ++k){
+        //    total += tempMulti[k]; 
+        //}
+        
+        //for(int g = 0; g < size; ++g){
+        //   final[i][g] = total;  
+        //}
+    }
+   
+    for(int i = 0; i < size; ++i){
+        for(int k = 0; k < size; ++k){
+            printf(" %d ",final[i][k]);
+            fprintf(ifp, " %d ", final[i][k]);
+        }
+        printf("EOL\n");
+        fprint(ifp, "\n");
+    }
+
+    fclose(ifp);
+    fclose(fp);
+
+    
+
+    return 0;
+
+}
+#include <stdio.h>
+
+int main(){
+
+    printf("Hellow world\n");
+
+    FILE *fp, *ifp;
+    int size = 0;
+    fp = fopen("Data4.txt","r");
+    ifp = fopen("matrix.out","w");
+
+    fscanf(fp,"%d",&size);
+    printf("%d", size);
+
+    int m1[size][size];
+    int m2[size][size];
+    int final[size][size];
+    int tempMulti[size];
+    int temp1 = 0;
+    int temp2 = 0;
+    int multiTemp = 0;
+    int total = 0;
+
+    //first array
+    for(int i = 0; i < size; ++i){
+        for(int j = 0; j < size; ++j){
+            fscanf(fp,"%d",&m1[i][j]);
+            //printf("m1[%d][%d] = %d ",i,j,m1[i][j]);
+        }
+    }
+
+    //second array
+    for(int i = 0; i < size; ++i){
+        for(int j = 0; j < size; ++j){
+            fscanf(fp,"%d",&m2[i][j]);
+            //printf("m2[%d][%d] = %d ",i,j,m2[i][j]);
+        }
+    }
+    //int g = 0;
+    //m1 row m2 column 
+    for(int i = 0; i < size; ++i){
+        //m1 column m2 row
+        for(int j = 0; j < size; ++j){
+          //
+          temp1 = m1[i][j];
+          for(int m = 0; m < size; ++m){
+            temp2 = m2[j][m];
+            total += temp1 * temp2;
+          }
+          //temp1 = &m1[i][j];
+          //temp2 = &m2[j][i];
+          //total += temp1 * temp2;
+            final[i][j] = total;
+            temp1 = 0;
+            temp2 = 0;
+            total = 0;
+        }
+        //for(int k = 0; k < size; ++k){
+        //    total += tempMulti[k]; 
+        //}
+        
+        //for(int g = 0; g < size; ++g){
+        //   final[i][g] = total;  
+        //}
+    }
+   
+    for(int i = 0; i < size; ++i){
+        for(int k = 0; k < size; ++k){
+            printf(" %d ",final[i][k]);
+            fprintf(ifp, " %d ", final[i][k]);
+        }
+        printf("EOL\n");
+        fprintf(ifp, "\n");
+    }
+
+    fclose(ifp);
+    fclose(fp);
+
+    
+
+    return 0;
+
+}
+#include <stdio.h>
+
+int main(){
+
+    printf("Hellow world\n");
+
+    FILE *fp, *ifp;
+    int size = 0;
+    fp = fopen("Data4.txt","r");
+    ifp = fopen("matrix.out","w");
+
+    fscanf(fp,"%d",&size);
+    //printf("%d", size);
+
+    int m1[size][size];
+    int m2[size][size];
+    int final[size][size];
+    int tempMulti[size];
+    int temp1 = 0;
+    int temp2 = 0;
+    int multiTemp = 0;
+    int total = 0;
+
+    //first array
+    //j iterates row
+    for(int i = 0; i < size; ++i){
+        for(int j = 0; j < size; ++j){
+            fscanf(fp,"%d",&m1[i][j]);
+            //printf("m1[%d][%d] = %d ",i,j,m1[i][j]);
+        }
+    }
+
+    //second array
+    for(int i = 0; i < size; ++i){
+        for(int j = 0; j < size; ++j){
+            fscanf(fp,"%d",&m2[i][j]);
+            //printf("m2[%d][%d] = %d ",i,j,m2[i][j]);
+        }
+    }
+    //int g = 0;
+    //m1 row m2 column 
+    for(int i = 0; i < size; ++i){
+        //m1 column m2 row
+        for(int j = 0; j < size; ++j){
+          //
+          for(int m = 0; m < size; ++m){
+            temp1 = m1[i][m];
+            temp2 = m2[m][j];
+            total += temp1 * temp2;
+          }
+          //temp1 = &m1[i][j];
+          //temp2 = &m2[j][i];
+          //total += temp1 * temp2;
+            final[i][j] = total;
+            temp1 = 0;
+            temp2 = 0;
+            total = 0;
+        }
+        //for(int k = 0; k < size; ++k){
+        //    total += tempMulti[k]; 
+        //}
+        
+        //for(int g = 0; g < size; ++g){
+        //   final[i][g] = total;  
+        //}
+    }
+   
+    for(int i = 0; i < size; ++i){
+        for(int k = 0; k < size; ++k){
+            printf("%d ",final[i][k]);
+            fprintf(ifp, "%d ", final[i][k]);
+        }
+        printf("EOL\n");
+        fprintf(ifp, "\n");
+    }
+
+    fclose(ifp);
+    fclose(fp);
+
+    
+
+    return 0;
+
+}
